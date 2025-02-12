@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiscereMinds - Empowering STEM Education</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* Header with Gradient Background */
+    header {
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    /* Navigation Bar */
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav li {
+      margin: 0 20px;
+    }
+    nav a {
+      display: block;
+      padding: 15px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #c33764;
+    }
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    /* Section Styling */
+    .section {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* STEM Tabs */
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ddd;
+    }
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .tabs button.active {
+      border-bottom: 3px solid #c33764;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Project Cards as Clickable Links */
+    .project {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .project:hover {
+      transform: scale(1.02);
+    }
+    .project h3 {
+      color: #1d2671;
+      margin-bottom: 10px;
+    }
+    .project p {
+      margin-bottom: 10px;
+    }
+    /* Download Button */
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #c33764;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #a01f4d;
+    }
+    /* Footer */
+    footer {
+      background: #1d2671;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    /* Responsive Navigation */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>DiscereMinds</h1>
+    <p>Empowering STEM Education for All with Affordable Arduino & Raspberry Pi Projects</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#" class="nav-link active" data-target="home">Home</a></li>
+      <li><a href="#" class="nav-link" data-target="stem">STEM Projects</a></li>
+      <li><a href="#" class="nav-link" data-target="about">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- Home Section -->
+    <section id="home" class="section active">
+      <h2>Welcome to DiscereMinds</h2>
+      <p>
+        Our mission is to bring hands-on STEM learning to everyone, especially in underserved communities.
+        With simple, affordable projects using tools like Arduino and Raspberry Pi, we ignite curiosity and
+        empower innovators of tomorrow.
+      </p>
+      <img src="https://via.placeholder.com/900x300?text=STEM+Education" alt="STEM Education" style="width:100%; border-radius:5px; margin-top:20px;">
+      <p style="margin-top:20px; font-style: italic;">
+        "The important thing is not to stop questioning. Curiosity has its own reason for existence." – Albert Einstein
+      </p>
+    </section>
+
+    <!-- STEM Projects Section -->
+    <section id="stem" class="section">
+      <h2>Explore Our STEM Projects</h2>
+      <!-- STEM Tab Navigation -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="science">Science</button>
+        <button class="tab-btn" data-tab="technology">Technology</button>
+        <button class="tab-btn" data-tab="engineering">Engineering</button>
+        <button class="tab-btn" data-tab="math">Math</button>
+      </div>
+      <!-- Science Tab Content -->
+      <div id="science" class="tab-content active">
+        <a class="project" href="chemical-reactions.html" target="_blank">
+          <h3>Fun with Chemical Reactions</h3>
+          <p>
+            Explore safe and engaging chemical reactions that explain scientific principles in an interactive way.
+          </p>
+        </a>
+        <a class="project" href="crystal-growth.html" target="_blank">
+          <h3>Crystal Growth Experiment</h3>
+          <p>
+            Discover how crystals form and grow through a simple experiment using common household materials.
+          </p>
+        </a>
+      </div>
+      <!-- Technology Tab Content -->
+      <div id="technology" class="tab-content">
+        <a class="project" href="arduino-starter.html" target="_blank">
+          <h3>Arduino Starter Kit</h3>
+          <p>
+            Get hands-on with coding and electronics using our beginner-friendly Arduino projects that include detailed guides.
+          </p>
+        </a>
+        <a class="project" href="raspberry-pi.html" target="_blank">
+          <h3>Raspberry Pi Innovations</h3>
+          <p>
+            Dive into more advanced tech projects with Raspberry Pi, integrating programming with hardware solutions.
+          </p>
+        </a>
+        <a class="project" href="light-sensor.html" target="_blank">
+          <h3>Light Sensor Experiment</h3>
+          <p>
+            Learn the basics of sensor technology by building a simple light sensor to capture ambient light levels.
+          </p>
+        </a>
+      </div>
+      <!-- Engineering Tab Content -->
+      <div id="engineering" class="tab-content">
+        <a class="project" href="building-challenges.html" target="_blank">
+          <h3>Creative Building Challenges</h3>
+          <p>
+            Engage in practical engineering challenges that promote innovation and problem-solving with everyday materials.
+          </p>
+        </a>
+        <a class="project" href="design-thinking.html" target="_blank">
+          <h3>Design Thinking</h3>
+          <p>
+            Use design thinking principles to tackle spontaneous problems, turning ideas into feasible prototypes.
+          </p>
+        </a>
+      </div>
+      <!-- Math Tab Content -->
+      <div id="math" class="tab-content">
+        <a class="project" href="math-lessons.html" target="_blank">
+          <h3>Interactive Math Lessons</h3>
+          <p>
+            Enhance your math skills through interactive lessons and exercises that apply math concepts to real-world scenarios.
+          </p>
+        </a>
+        <a class="project" href="physics-challenges.html" target="_blank">
+          <h3>Physics Challenges</h3>
+          <p>
+            Solve puzzles and problems that bridge the gap between math and physics, available in multiple difficulty levels.
+          </p>
+        </a>
+      </div>
+      <!-- Download Materials -->
+      <a href="materials.zip" class="download-btn" download>Download Offline Materials</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <p>
+        DiscereMinds is dedicated to making STEM education accessible and engaging for all. We create affordable,
+        hands-on projects using Arduino and Raspberry Pi, helping to spark creativity and foster technical skills
+        in underserved communities.
+      </p>
+      <h3>Our Founders</h3>
+      <p>
+        A passionate group of educators and engineers, our founders bring years of experience in teaching and project
+        development, committed to bridging the educational gap.
+      </p>
+      <h3>Our Impact & Partners</h3>
+      <p>
+        By collaborating with various nonprofits, including 
+        <a href="https://thepureglobal.org/" target="_blank" style="color:#c33764; text-decoration:underline;">The Pure Global Organization</a>,
+        we ensure our resources reach those who need them most.
+      </p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 DiscereMinds. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Navigation and Tabs -->
+  <script>
+    // Section Navigation
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Remove active class from all nav links and sections
+        navLinks.forEach(link => link.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        // Add active class to clicked link and corresponding section
+        this.classList.add('active');
+        const targetId = this.getAttribute('data-target');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+
+    // STEM Tab Navigation
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all tab buttons and contents
+        tabButtons.forEach(button => button.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Activate the clicked tab and its corresponding content
+        this.classList.add('active');
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
